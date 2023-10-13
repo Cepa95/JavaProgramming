@@ -1,4 +1,5 @@
 package com.oss;
+
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -14,6 +15,7 @@ class ColorTest {
         Color colorTest = new Color(31, 240, 255);
         assertEquals(31, colorTest.getRed());
     }
+
     @Test
     void setRed() {
         Color colorTest = new Color(31, 240, 255);
@@ -21,11 +23,13 @@ class ColorTest {
         int expectedVal = 31;
         assertEquals(expectedVal, colorTest.getRed());
     }
+
     @Test
     void getGreen() {
         Color colorTest = new Color(31, 240, 255);
         assertEquals(240, colorTest.getGreen());
     }
+
     @Test
     void setGreen() {
         Color colorTest = new Color(31, 240, 255);
@@ -33,11 +37,13 @@ class ColorTest {
         int expectedVal = 50;
         assertEquals(expectedVal, colorTest.getGreen());
     }
+
     @Test
     void getBlue() {
         Color colorTest = new Color(31, 240, 255);
         assertEquals(255, colorTest.getBlue());
     }
+
     @Test
     void setBlue() {
         Color colorTest = new Color(31, 240, 255);
@@ -45,6 +51,7 @@ class ColorTest {
         int expectedVal = 50;
         assertEquals(expectedVal, colorTest.getBlue());
     }
+
     @Test
     void RGBtoHSB() {
         Color colorTest = new Color(31, 240, 255);
@@ -59,6 +66,7 @@ class ColorTest {
         assertEquals(expectedArr.get(1), actualArr.get(1));
         assertEquals(expectedArr.get(2), actualArr.get(2));
     }
+
     @Test
     void RGBtoHSL() {
         Color colorTest = new Color(31, 240, 255);
@@ -73,6 +81,7 @@ class ColorTest {
         assertEquals(expectedArr.get(1), actualArr.get(1));
         assertEquals(expectedArr.get(2), actualArr.get(2));
     }
+
     @Test
     void RGBtoCMYK() {
         Color colorTest = new Color(31, 240, 255);
@@ -82,19 +91,21 @@ class ColorTest {
         expectedArr.add(0);
         expectedArr.add(0);
         ArrayList<Integer> actualArr = new ArrayList<>();
-        Color.RGBtoCMYK(colorTest.getRed(),colorTest.getGreen(),colorTest.getBlue(),actualArr);
-        assertEquals(expectedArr.get(0),actualArr.get(0));
-        assertEquals(expectedArr.get(1),actualArr.get(1));
-        assertEquals(expectedArr.get(2),actualArr.get(2));
-        assertEquals(expectedArr.get(3),actualArr.get(3));
+        Color.RGBtoCMYK(colorTest.getRed(), colorTest.getGreen(), colorTest.getBlue(), actualArr);
+        assertEquals(expectedArr.get(0), actualArr.get(0));
+        assertEquals(expectedArr.get(1), actualArr.get(1));
+        assertEquals(expectedArr.get(2), actualArr.get(2));
+        assertEquals(expectedArr.get(3), actualArr.get(3));
     }
+
     @Test
     void decode() {
         Color colorTest = new Color(31, 240, 255);
         Color actualVal = Color.decode("0x1FF0FF");
-        assertEquals(colorTest.getRed(),actualVal.getRed());
-        assertEquals(colorTest.getGreen(),actualVal.getGreen());
-        assertEquals(colorTest.getBlue(),actualVal.getBlue());
+        assertEquals(colorTest.getRed(), actualVal.getRed());
+        assertEquals(colorTest.getGreen(), actualVal.getGreen());
+        assertEquals(colorTest.getBlue(), actualVal.getBlue());
 
     }
+
 }

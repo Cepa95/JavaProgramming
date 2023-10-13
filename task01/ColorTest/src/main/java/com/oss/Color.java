@@ -1,4 +1,5 @@
 package com.oss;
+
 import java.util.ArrayList;
 
 public class Color {
@@ -41,11 +42,11 @@ public class Color {
     }
 
 
-    public Color(int red, int green, int blue){
-        this.red=red;
-        this.green=green;
-        this.blue=blue;
-        value = ((red & 0xFF) << 16) | ((green & 0xFF) << 8)  | ((blue & 0xFF) << 0);
+    public Color(int red, int green, int blue) {
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
+        value = ((red & 0xFF) << 16) | ((green & 0xFF) << 8) | ((blue & 0xFF) << 0);
     }
 
     public static ArrayList<Float> RGBtoHSB(int r, int g, int b, ArrayList<Float> hsbCode) {
@@ -83,7 +84,7 @@ public class Color {
         return hsbCode;
     }
 
-    public static ArrayList<Float> RGBtoHSL(int rgb, ArrayList<Float> hslCode ) {
+    public static ArrayList<Float> RGBtoHSL(int rgb, ArrayList<Float> hslCode) {
         float r = ((0x00ff0000 & rgb) >> 16) / 255.f;
         float g = ((0x0000ff00 & rgb) >> 8) / 255.f;
         float b = ((0x000000ff & rgb)) / 255.f;
@@ -95,12 +96,12 @@ public class Color {
         if (c == 0) {
             h_ = 0;
         } else if (max == r) {
-            h_ = (float)(g-b) / c;
+            h_ = (float) (g - b) / c;
             if (h_ < 0) h_ += 6.f;
         } else if (max == g) {
-            h_ = (float)(b-r) / c + 2.f;
+            h_ = (float) (b - r) / c + 2.f;
         } else if (max == b) {
-            h_ = (float)(r-g) / c + 4.f;
+            h_ = (float) (r - g) / c + 4.f;
         }
         float h = 60.f * h_;
 
@@ -114,10 +115,11 @@ public class Color {
         }
 
         hslCode.add(h);
-        hslCode.add(s*100);
-        hslCode.add(l*100);
+        hslCode.add(s * 100);
+        hslCode.add(l * 100);
         return hslCode;
     }
+
     public static ArrayList<Integer> RGBtoCMYK(int r, int g, int b, ArrayList<Integer> cmyk) {
         double percentageR = r / 255.0 * 100;
         double percentageG = g / 255.0 * 100;
@@ -142,37 +144,12 @@ public class Color {
         return cmyk;
     }
 
-    public static Color decode(String str){
+    public static Color decode(String str) {
         Integer intval = Integer.decode(str);
         int i = intval.intValue();
         return new Color((i >> 16) & 0xFF, (i >> 8) & 0xFF, i & 0xFF);
     }
-
-    public static void main(String[] args) {
-
-        String hexColor = "0x1FF0FF";
-        Color c = Color.decode(hexColor);
-
-        ArrayList<Float> hsbCode = new ArrayList<>();
-        ArrayList<Integer> cmykCode = new ArrayList<>();
-        ArrayList<Float> hslCode = new ArrayList<>();
-
-        Color.RGBtoHSB(c.getRed(), c.getGreen(), c.getBlue(), hsbCode);
-        Color.RGBtoHSL(c.getValue(),hslCode);
-        Color.RGBtoCMYK(c.getRed(), c.getGreen(), c.getBlue(), cmykCode);
-
-
-        System.out.println("Boja u HEX formatu: 0x" +
-                Integer.toHexString(c.getValue() & 0x00FFFFFF));
-        System.out.println("Boja u RGB formatu: " + c.getRed() + ", " +
-                c.getGreen() + ", " + c.getBlue());
-        System.out.println("Boja u HSB formatu: " + hsbCode.get(0) * 360 + "°, " +
-                hsbCode.get(1) * 100 + "%, " + hsbCode.get(2) * 100 + "%");
-        System.out.println("Boja u HSL formatu: " + hslCode.get(0) + "°, " +
-                hslCode.get(1)  + "%, " + hslCode.get(2)  + "%");
-        System.out.println("Boja u CMYK formatu: " + cmykCode.get(0) + ", " +
-                cmykCode.get(1) + ", " + cmykCode.get(2) + ", " + cmykCode.get(3));
-    }
+    public static void main(String[] args){}
 }
 
 

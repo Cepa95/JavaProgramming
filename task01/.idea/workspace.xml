@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="037d7d7b-9dde-4fb1-bc6b-205b1ee6ef0b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../ColorTest/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ColorTest/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ColorTest/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ColorTest/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ColorTest/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ColorTest/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ColorTest/src/main/java/com/oss/Color.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ColorTest/src/test/java/com/oss/ColorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/oss/jceprnic/Color.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/task01.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
