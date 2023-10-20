@@ -1,5 +1,6 @@
 package com.oss.jceprnic;
 
+
 import lombok.Getter;
 import lombok.Setter;
 import org.eclipse.paho.client.mqttv3.MqttClient;
@@ -48,8 +49,10 @@ public class Device {
             String message = sensor.getSensorData();
             MqttMessage messageBytes = new MqttMessage(message.getBytes());
             mqttClient.publish(topic, messageBytes);
+            System.out.println("Message published");
         }
         mqttClient.disconnect();
+        mqttClient.close();
     }
 
 
