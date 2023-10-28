@@ -1,117 +1,72 @@
-# BankManagmentSystem
+# OnlineTrainingSystem
 
 ## List of Contents
-* [Introduction](#introduction)
-* [Features](#features)
-  * [Admin Features](#admin-features)
-  * [Bank Employee Features](#bank-employee-features)
-  * [User Features](#user-features)
+* [Goal of the Application](#goal-of-the-application)
+* [Key Features](#key-features)
+* [Application Flow](#application-flow)
+  * [For Clients](#for-clients)
+  * [For Coaches](#for-coaches)
+  
 * [Technologies](#technologies)
 
+## Goal of the Application
+The primary objective of this application is to facilitate the connection between clients and coaches in a mutually beneficial way. This app serves as a tool to streamline communication between both parties, helping coaches and clients achieve their fitness and training goals. This system is designed to enhance the experience of both clients and coaches, ensuring effective communication and support in achieving fitness and training goals. The matching algorithm and customized workout plans contribute to a more personalized and successful training experience for all users.
 
-## Introduction
-This software is designed to streamline and simplify the operations of a bank, offering a comprehensive solution for managing accounts, transactions, customer information, and more. Whether you are a bank administrator, a software developer, or simply curious about how modern banking systems work, this README will provide you with an overview of the project's purpose, features, and how to get started.
+## Key Features
 
+1. **Registration of Clients and Coaches**
+   - Clients and coaches can sign up and provide essential information about themselves.
 
-## Features
-Our Bank Management System is equipped with a wide range of features to cater to the diverse needs of financial institutions. Some of the key functionalities include:
+2. **Adding Different Types of Workouts**
+   - Coaches can add various types of workouts to the system, such as bodybuilding, street workout, pilates, and yoga.
 
-## Features
+3. **Matching Clients and Coaches**
+   - The application matches clients with suitable coaches based on the information provided during registration.
 
-### Admin Features:
+4. **For Coaches**
+   - Coaches can create customized workout plans for their clients.
 
-1. **User Management:**
-   - Create, modify, and disable user accounts.
-   - Reset user passwords and unlock accounts.
-   - Assign and manage user roles and permissions.
+5. **For Clients**
+   - Clients can fill out forms designed to track their progress.
 
-2. **Account Management:**
-   - Create, modify, and close bank accounts.
-   - View account details and transaction histories.
-   - Set account-specific parameters and restrictions.
+6. **Tracking Progress**
+   - The system can calculate and track the progress of clients based on the data they input.
 
-3. **Transaction Monitoring:**
-   - Access transaction logs and monitor for suspicious activity.
-   - Aid in fraud detection and prevention.
+7. **Workout Plan Generation**
+   - Clients can download their workout plans in PDF format or a similar format.
 
-4. **Customer Support:**
-   - View and respond to customer support tickets or inquiries.
-   - Provide assistance to customers when needed.
+## Application Flow
 
-5. **Reporting and Analytics:**
-   - Generate various reports, such as financial summaries, transaction reports, and account statistics.
-   - Support decision-making and compliance monitoring.
+### Registration of Clients and Coaches
 
-6. **User Access Control:**
-   - Manage user roles and permissions to control access to features and data.
-   - Ensure proper segregation of duties.
+### For Clients:
 
-7. **Loan Management:**
-   - Manage loan applications, approvals, and disbursements.
-   - Set interest rates and loan terms.
+- **Registration**
+  - Insert basic information, including gender, age, current height, and current weight.
+  - Specify the desired types of training.
+  - Provide information about previous training experience.
+  - Indicate preferences for a coach, including gender, age, experience, and price.
 
-8. **Customer Data Management:**
-   - Update customer profiles, including contact information and KYC data.
+### For Coaches:
 
-### Bank Employee Features:
+- **Registration**
+  - Insert basic information, including gender and age.
+  - Specify the types of training offered and educational background.
+  - Provide years of coaching experience and pricing details.
 
-1. **Customer Information Access:**
-   - Access and update customer information.
-   - Verify customer identity and account details.
+## Business Logic
 
-2. **Transaction Approval:**
-   - Review and approve/reject certain transactions, especially those requiring manual intervention.
+- **Matching Algorithm**
+  - The application uses an algorithm to match clients with coaches based on factors such as gender, age, experience, types of training, and price.
 
-3. **Account Maintenance:**
-   - Update account status, freeze/unfreeze accounts, and add account-specific notes.
+- **Coach-Client Interaction**
+  - Coaches can create tailored training programs for clients.
 
-4. **Customer Communication:**
-   - Communicate with customers to address inquiries and resolve issues.
+- **Progress Tracking**
+  - Clients can fill out forms to track their progress, and the software calculates and monitors their improvements.
 
-5. **Compliance Management:**
-   - Monitor and ensure compliance with banking regulations and policies.
-
-6. **Report Generation:**
-   - Generate reports for internal purposes, regulatory compliance, and customer requests.
-
-7. **Loan Processing:**
-   - Review loan applications, approve or reject them, and manage disbursement.
-
-
-### User Features:
-
-1. **Account Access:**
-   - Log in securely to access their accounts.
-
-2. **Balance Inquiry:**
-   - Check account balances and view recent transactions.
-
-3. **Fund Transfers:**
-   - Initiate transfers between their own accounts or to other bank accounts.
-
-4. **Bill Payment:**
-   - Pay bills, including utility bills, credit card bills, and loan repayments.
-
-5. **Transaction History:**
-   - View detailed transaction histories, including deposits, withdrawals, and transfers.
-
-6. **Profile Management:**
-   - Update personal information, contact details, and preferences.
-
-7. **Statement Generation:**
-   - Generate PDF account statements and download them for their records.
-
-8. **Loan Application:**
-   - Apply for loans and track the status of loan applications.
-
-9. **Contact Customer Support:**
-   - Submit inquiries or support tickets for assistance.
-
-10. **Security Settings:**
-    - Change passwords and manage account security settings.
-
-11. **Feedback:**
-    - Provide feedback and ratings about the bank's services.
+- **Workout Plan Delivery**
+  - Clients have the ability to download their training programs in PDF format.
 
   ## Technologies
   <p align="center">
@@ -128,13 +83,14 @@ Our Bank Management System is equipped with a wide range of features to cater to
     
   ![Flyway](https://img.shields.io/badge/flyway-flyway?color=red)
   ![Thymeleaf](https://img.shields.io/badge/Thymeleaf-Thymeleaf?color=greem)
-
-
-    
-
-
-   
   </p>
+
+
+
+
+
+
+  
 
 
   
