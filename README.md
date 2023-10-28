@@ -1,6 +1,7 @@
 # OnlineTrainingSystem
 
 ## List of Contents
+* [Developers](#developers)
 * [Goal of the Application](#goal-of-the-application)
 * [Key Features](#key-features)
 * [Application Flow](#application-flow)
@@ -8,6 +9,12 @@
   * [For Coaches](#for-coaches)
   
 * [Technologies](#technologies)
+
+## Developers
+* [Branimir Bilić](https://github.com/nebra00)
+* [Josip Čeprnić](https://github.com/Cepa95)
+* [Luka Polić](https://github.com/PolicLL)
+
 
 ## Goal of the Application
 The primary objective of this application is to facilitate the connection between clients and coaches in a mutually beneficial way. This app serves as a tool to streamline communication between both parties, helping coaches and clients achieve their fitness and training goals. This system is designed to enhance the experience of both clients and coaches, ensuring effective communication and support in achieving fitness and training goals. The matching algorithm and customized workout plans contribute to a more personalized and successful training experience for all users.
