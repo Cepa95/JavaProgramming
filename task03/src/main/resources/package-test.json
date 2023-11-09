@@ -1,0 +1,20 @@
+{
+  "address": "tcp://localhost:1883",
+  "topic": "testTopic",
+  "sensors": [
+    {
+      "name": "check1",
+      "lowerRange": -3266.8,
+      "higherRange": 3266.8,
+      "factor": 10,
+      "unit": "C"
+    },
+    {
+      "name": "check2",
+      "lowerRange": 0,
+      "higherRange": 65.36,
+      "factor": 1000,
+      "unit": "Bar"
+    }
+  ]
+}
