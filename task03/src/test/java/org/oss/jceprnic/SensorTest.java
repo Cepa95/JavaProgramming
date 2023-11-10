@@ -20,7 +20,6 @@ class SensorTest {
         assertTrue(sensor.getValue() >= sensor.getLowerRange() && sensor.getValue() <= sensor.getHigherRange());
     }
 
-
     @Test
     void testInitialValue() {
         assertEquals(0, sensor.getValue());

@@ -10,15 +10,13 @@ import java.io.IOException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
-
 class DeviceTest {
     private Device device;
 
     @BeforeEach
     public void setUp() {
 
-        device = new Device("./src/main/resources/package-test.json");
+        device = new Device("./src/main/resources/deserialization-test.json");
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             device = objectMapper.readValue(new File(device.getJsonPath()), Device.class);
