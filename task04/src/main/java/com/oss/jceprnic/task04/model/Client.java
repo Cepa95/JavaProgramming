@@ -23,7 +23,11 @@ public class Client {
     private String email;
 
     @OneToOne
-    @JoinColumn(name = "address_id")
+    @JoinColumn(name = "address_id", unique = true)
     private Address address;
+
+    @OneToOne
+    @JoinColumn(name = "device_id", unique = true)
+    private Device device;
 
 }

@@ -1,6 +1,6 @@
 package com.oss.jceprnic.task04.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper; // Import ObjectMapper
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oss.jceprnic.task04.model.Client;
 import com.oss.jceprnic.task04.repository.ClientRepository;
 import lombok.AllArgsConstructor;
@@ -39,12 +39,10 @@ public class ClientService {
             File file = new File("src/main/resources/client.json");
             Client client = objectMapper.readValue(file, Client.class);
 
-            // Ensure email is set
             if (client.getEmail() == null) {
                 throw new IllegalArgumentException("Email cannot be null");
             }
 
-            // Save the client to the database
             return clientRepository.save(client);
         } catch (IOException e) {
             e.printStackTrace();

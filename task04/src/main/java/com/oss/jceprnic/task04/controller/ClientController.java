@@ -3,7 +3,7 @@ package com.oss.jceprnic.task04.controller;
 import com.oss.jceprnic.task04.model.Client;
 import com.oss.jceprnic.task04.service.ClientService;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,6 +36,7 @@ public class ClientController {
     }
 
     //@PostMapping("/save")
+    // POSTMAN => body key:jsonFilePath, value: classpath:client.json
     @PostMapping
     public ResponseEntity<?> createClient() {
         try {

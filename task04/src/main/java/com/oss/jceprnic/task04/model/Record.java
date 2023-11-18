@@ -1,7 +1,11 @@
 package com.oss.jceprnic.task04.model;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.Data;
+
+import jakarta.persistence.*;
+
+import java.util.Random;
 
 @Entity
 @Table(name = "record")
@@ -13,10 +17,20 @@ public class Record {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(name = "data", nullable = false)
-    private String data;
+    @Column(name = "electricity_consumption_in_kwh", nullable = false)
+    private Long electricityConsumptionInKWh;
 
     @ManyToOne
     @JoinColumn(name = "device_id", nullable = false)
+    @JsonBackReference
     private Device device;
+
+    public Record() {
+        this.electricityConsumptionInKWh = generateRandomConsumption();
+    }
+
+    private Long generateRandomConsumption() {
+        Random random = new Random();
+        return (long) (random.nextDouble() * 500);
+    }
 }
