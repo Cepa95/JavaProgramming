@@ -1,0 +1,8 @@
+package com.oss.jceprnic.task04.repository;
+
+import com.oss.jceprnic.task04.model.Device;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DeviceRepository extends JpaRepository<Device, Long> {
+
+}
