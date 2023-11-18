@@ -24,13 +24,4 @@ public class Record {
     @JoinColumn(name = "device_id", nullable = false)
     @JsonBackReference
     private Device device;
-
-    public Record() {
-        this.electricityConsumptionInKWh = generateRandomConsumption();
-    }
-
-    private Long generateRandomConsumption() {
-        Random random = new Random();
-        return (long) (random.nextDouble() * 500);
-    }
 }
