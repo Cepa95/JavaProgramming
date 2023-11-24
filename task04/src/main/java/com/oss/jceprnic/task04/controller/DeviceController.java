@@ -26,8 +26,8 @@ public class DeviceController {
         return deviceService.findByIdWithRecords(deviceId);
     }
 
-    //http://localhost:8080/api/devices/save
-    @PostMapping("/save")
+    //http://localhost:8080/api/devices
+    @PostMapping
     public ResponseEntity<?> createDevice() {
         try {
             Device savedDevice = deviceService.saveDevice();

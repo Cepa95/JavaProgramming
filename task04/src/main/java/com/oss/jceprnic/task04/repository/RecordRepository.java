@@ -10,8 +10,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface RecordRepository extends JpaRepository<Record, Long> {
-    List<Record> findAll();
-
     @Query("SELECT d FROM Device d WHERE d.id = :deviceId")
     Optional<Device> findDeviceById(@Param("deviceId") Long deviceId);
 

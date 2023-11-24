@@ -21,8 +21,8 @@ public class AddressController {
         return addressService.findByCity(city);
     }
 
-    //http://localhost:8080/api/addresses/save
-    @PostMapping("/save")
+    //http://localhost:8080/api/addresses
+    @PostMapping
     public ResponseEntity<?> createAddress() {
         try {
             Address savedAddress = addressService.saveAddress();
