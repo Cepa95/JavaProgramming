@@ -16,4 +16,6 @@ public interface RecordRepository extends JpaRepository<Record, Long> {
     List<Record> findByYearMeasuredAndDeviceId(Integer yearMeasured, Long deviceId);
 
     boolean existsByYearMeasuredAndDeviceId(Integer yearMeasured, Long deviceId);
+
+    Optional<Record> findByYearMeasuredAndMonthMeasuredAndDeviceId(Integer yearMeasured, Integer monthMeasured, Long deviceId);
 }

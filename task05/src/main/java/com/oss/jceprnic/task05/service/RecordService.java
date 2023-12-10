@@ -6,7 +6,9 @@ import com.oss.jceprnic.task05.repository.RecordRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 @Service
@@ -63,4 +65,21 @@ public class RecordService {
                 .sum();
     }
 
+    public Map<Integer, Long> getMeasurementsForMonths(Integer year, Long deviceId, List<Integer> months) {
+        Map<Integer, Long> measurementsForMonths = new HashMap<>();
+
+        for (Integer month : months) {
+            if (month < 1 || month > 12) {
+                throw new NoSuchElementException("Invalid month. Month must be between 1 and 12.");
+            }
+
+            Record record = recordRepository.findByYearMeasuredAndMonthMeasuredAndDeviceId(year, month, deviceId)
+                    .orElseThrow(() -> new NoSuchElementException("Record not found for the specified year, month, and device ID."));
+
+            Long electricityConsumptionForMonth = record.getElectricityConsumptionInKWh();
+
+            measurementsForMonths.put(month, electricityConsumptionForMonth);
+        }
+        return measurementsForMonths;
+    }
 }

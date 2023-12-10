@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 @RestController
@@ -30,6 +31,12 @@ public class RecordController {
     }
 
     // http://localhost:8080/api/records/1
+
+    //{
+    //  "electricityConsumptionInKWh": 150,
+    //  "monthMeasured": 9,
+    //  "yearMeasured": 2023
+    //}
     @PutMapping("/{recordId}")
     public ResponseEntity<Record> updateRecord(@PathVariable Long recordId, @RequestBody Record updatedRecord) {
         try {
@@ -52,8 +59,8 @@ public class RecordController {
     }
 
 
-    // http://localhost:8080/api/records/consumptions?year=2023&deviceId=2
-    @GetMapping("/consumptions")
+    // http://localhost:8080/api/records/year-consumptions?year=2023&deviceId=2
+    @GetMapping("/year-consumptions")
     public ResponseEntity<?> getTotalConsumptionForYear(
             @RequestParam Integer year,
             @RequestParam Long deviceId) {
@@ -62,6 +69,20 @@ public class RecordController {
             return ResponseEntity.ok(totalConsumption);
         } catch (NoSuchElementException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
+
+    // http://localhost:8080/api/records/month-consumptions?year=2023&deviceId=2&months=1,2,3
+    @GetMapping("/month-consumptions")
+    public ResponseEntity<?> getMeasurementsForMonths(
+            @RequestParam Integer year,
+            @RequestParam Long deviceId,
+            @RequestParam List<Integer> months) {
+        try {
+            Map<Integer, Long> measurementsForMonths = recordService.getMeasurementsForMonths(year, deviceId, months);
+            return ResponseEntity.ok(measurementsForMonths);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
 }

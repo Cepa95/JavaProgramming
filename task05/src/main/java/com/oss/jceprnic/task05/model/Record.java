@@ -28,6 +28,4 @@ public class Record {
     @JoinColumn(name = "device_id", nullable = false)
     @JsonBackReference
     private Device device;
-
-
 }
