@@ -1,0 +1,57 @@
+package com.oss.jceprnic.task05.controller;
+
+import com.oss.jceprnic.task05.model.Record;
+import com.oss.jceprnic.task05.service.RecordService;
+import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.NoSuchElementException;
+
+@RestController
+@RequestMapping("/api/records")
+@AllArgsConstructor
+public class RecordController {
+
+    private final RecordService recordService;
+
+    //http://localhost:8080/api/records
+    @GetMapping
+    public List<Record> getAllRecords() {
+        return recordService.getAllRecords();
+    }
+
+    //http://localhost:8080/api/records/add?deviceId=3
+    @PostMapping("/add")
+    public Record addRecord(@RequestParam Long deviceId) {
+        return recordService.addRecord(deviceId);
+    }
+
+    // http://localhost:8080/api/records/1
+    @PutMapping("/{recordId}")
+    public ResponseEntity<Record> updateRecord(@PathVariable Long recordId, @RequestBody Record updatedRecord) {
+        try {
+            Record updated = recordService.updateRecord(recordId, updatedRecord);
+            return new ResponseEntity<>(updated, HttpStatus.OK);
+        } catch (NoSuchElementException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    // http://localhost:8080/api/records/1
+    @DeleteMapping("/{recordId}")
+    public ResponseEntity<Void> deleteRecord(@PathVariable Long recordId) {
+        try {
+            recordService.deleteRecord(recordId);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (NoSuchElementException e) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+
+
+}
+
