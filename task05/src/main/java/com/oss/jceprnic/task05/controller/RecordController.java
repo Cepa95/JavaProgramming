@@ -52,6 +52,17 @@ public class RecordController {
     }
 
 
-
+    // http://localhost:8080/api/records/consumptions?year=2023&deviceId=2
+    @GetMapping("/consumptions")
+    public ResponseEntity<?> getTotalConsumptionForYear(
+            @RequestParam Integer year,
+            @RequestParam Long deviceId) {
+        try {
+            Long totalConsumption = recordService.getTotalConsumptionForYear(year, deviceId);
+            return ResponseEntity.ok(totalConsumption);
+        } catch (NoSuchElementException e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+        }
+    }
 }
 

@@ -52,4 +52,15 @@ public class RecordService {
         recordRepository.deleteById(recordId);
     }
 
+    public Long getTotalConsumptionForYear(Integer yearMeasured, Long deviceId) {
+        List<Record> recordsForYearAndDevice = recordRepository.findByYearMeasuredAndDeviceId(yearMeasured, deviceId);
+
+        if (!recordRepository.existsByYearMeasuredAndDeviceId(yearMeasured, deviceId)) {
+            throw new NoSuchElementException("Record not found for the specified year and device ID.");
+        }
+        return recordsForYearAndDevice.stream()
+                .mapToLong(Record::getElectricityConsumptionInKWh)
+                .sum();
+    }
+
 }
