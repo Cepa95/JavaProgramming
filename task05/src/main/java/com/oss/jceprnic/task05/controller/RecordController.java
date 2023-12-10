@@ -58,7 +58,6 @@ public class RecordController {
         }
     }
 
-
     // http://localhost:8080/api/records/year-consumptions?year=2023&deviceId=2
     @GetMapping("/year-consumptions")
     public ResponseEntity<?> getTotalConsumptionForYear(
