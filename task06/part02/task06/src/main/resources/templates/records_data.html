@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/navigation.css}">
+    <link rel="stylesheet" th:href="@{/css/table.css}">
+</head>
+<body>
+
+<h1>Records for Device</h1>
+
+<div th:if="${clientId != null}">
+    <h2>Client ID</h2>
+    <h3 th:text="${clientId}"></h3>
+
+    <h2>Client Information</h2>
+    <h3 th:text="${clientName}"></h3>
+    <h3 th:text="${clientEmail}"></h3>
+</div>
+
+<div th:if="${not #lists.isEmpty(records)}">
+    <h2>Record ID</h2>
+    <h3 th:text="${records[0].id}"></h3>
+
+    <h2>Device Name</h2>
+    <h3 th:text="${records[0].device.name}"></h3>
+
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>Electricity Consumption (kWh)</th>
+        <th>Month Measured</th>
+        <th>Year Measured</th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+    <tr th:if="${not #lists.isEmpty(records)}" th:each="record : ${records}">
+        <td th:text="${record.electricityConsumptionInKWh}"></td>
+        <td th:text="${record.monthMeasured}"></td>
+        <td th:text="${record.yearMeasured}"></td>
+    </tr>
+
+    <!-- Display a message if there are no records -->
+    <tr th:unless="${not #lists.isEmpty(records)}">
+        <td colspan="3">No records available</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

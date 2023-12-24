@@ -30,7 +30,7 @@ public class ClientController {
     public String registerUser(@ModelAttribute Client client, Model model) {
         try {
             clientService.registerClient(client);
-            return "login";
+            return "index";
         } catch (RuntimeException e) {
             model.addAttribute("error", e.getMessage());
             model.addAttribute("client", client);
@@ -54,7 +54,9 @@ public class ClientController {
         Optional<Client> optionalClient = clientService.loginClient(client.getEmail());
 
         if (optionalClient.isPresent()) {
-            return "redirect:/clients/" + optionalClient.get().getId() + "/device";
+            Long clientId = optionalClient.get().getId();
+            Long deviceId = optionalClient.get().getDevice().getId();
+            return "redirect:/records/" + clientId + "/device/" + deviceId;
         } else {
             return "redirect:/clients/login?error";
         }

@@ -1,11 +1,14 @@
 package com.oss.jceprnic.task06.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @Table
+@AllArgsConstructor
 public class Client {
 
     @Id

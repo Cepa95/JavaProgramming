@@ -1,13 +1,17 @@
 package com.oss.jceprnic.task06.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @Table(name = "record", uniqueConstraints = { @UniqueConstraint(columnNames = {"year_measured", "month_measured", "device_id"})})
+@AllArgsConstructor
+@NoArgsConstructor
 public class Record {
 
     @Id
@@ -28,4 +32,6 @@ public class Record {
     @JoinColumn(name = "device_id", nullable = false)
     @JsonBackReference
     private Device device;
+
+
 }

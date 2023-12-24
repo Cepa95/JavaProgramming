@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/navigation.css}">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .buttons form {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .button {
+            width: 120px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Vjezba 6</h1>
+    <div class="buttons">
+        <form action="/clients/login" method="get">
+            <input class="button" type="submit" value="Login">
+        </form>
+        <form action="/clients/register" method="get">
+            <input class="button" type="submit" value="Register">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
