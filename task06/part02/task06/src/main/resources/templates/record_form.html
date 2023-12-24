@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Record Form</title>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+    <link rel="stylesheet" th:href="@{/css/navigation.css}">
+    <link rel="stylesheet" th:href="@{/css/table.css}">
+</head>
+<body>
+<main class="align">
+    <div class="login">
+        <br>
+        <br>
+        <header class="login__header">
+            <h2 class="align">Record form</h2>
+        </header>
+
+<form th:action="@{/records/forms}" class="login__form" method="post" th:object="${record}">
+    <input type="hidden" name="deviceId" th:value="${deviceId}" />
+
+    <label for="electricityConsumptionInKWh">Electricity Consumption (kWh):</label>
+    <input type="number" id="electricityConsumptionInKWh" name="electricityConsumptionInKWh" th:field="*{electricityConsumptionInKWh}" required min="1"/>
+
+    <label for="monthMeasured">Month Measured:</label>
+    <input type="number" id="monthMeasured" name="monthMeasured" th:field="*{monthMeasured}" required min="1"/>
+
+    <label for="yearMeasured">Year Measured:</label>
+    <input type="number" id="yearMeasured" name="yearMeasured" th:field="*{yearMeasured}" required min="2022"/>
+
+    <div>
+        <input class="button" type="submit" value="Add new record">
+    </div>
+</form>
+    </div>
+</main>
+</body>
+</html>
