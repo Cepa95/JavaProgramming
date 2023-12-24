@@ -38,6 +38,14 @@ public class RecordController {
         return ResponseEntity.ok(recordsPage);
     }
 
+    @GetMapping("/{recordId}")
+    public ResponseEntity<Record> getRecordById(@PathVariable Long recordId) {
+        // Simulate a situation where the record is not found
+        throw new NoSuchElementException("Record not found with id: " + recordId);
+    }
+
+
+
     //http://localhost:8080/api/records/add?deviceId=3
     @PostMapping("/add")
     public Record addRecord(@RequestParam Long deviceId) {
