@@ -1,4 +1,4 @@
-package com.oss.jceprnic.task06.model;
+package com.oss.jceprnic.task06.task06.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
