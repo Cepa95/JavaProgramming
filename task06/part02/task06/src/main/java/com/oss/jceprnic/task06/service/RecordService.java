@@ -4,8 +4,11 @@ import com.oss.jceprnic.task06.model.Device;
 import com.oss.jceprnic.task06.model.Record;
 import com.oss.jceprnic.task06.repository.RecordRepository;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -27,9 +30,6 @@ public class RecordService {
         record.setDevice(device);
 
         recordRepository.save(record);
-
     }
-
-
 
 }
